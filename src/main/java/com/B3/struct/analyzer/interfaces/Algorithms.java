@@ -7,7 +7,7 @@ public interface Algorithms<T> {
 
     public void sort(T[] array);
 
-    void sort(T[] array, BiFunction<T, T, Integer> comparator);
+    public void sort(T[] array, BiFunction<T, T, Integer> comparator);
 
     public String getComplexity();
 }
