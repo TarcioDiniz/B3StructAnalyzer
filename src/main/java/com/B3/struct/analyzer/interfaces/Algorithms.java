@@ -1,11 +1,13 @@
 package com.B3.struct.analyzer.interfaces;
 
-import java.util.Comparator;
+import java.util.function.BiFunction;
 
 public interface Algorithms<T> {
     public String getName();
 
-    public T[] sort(T[] array, Comparator<? super T> comparator);
+    public void sort(T[] array);
+
+    void sort(T[] array, BiFunction<T, T, Integer> comparator);
 
     public String getComplexity();
 }
