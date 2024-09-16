@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538cf846-668a-44f0-8158-3067cf4fc5b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/services/HeapSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/services/InsertionSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/services/MergeSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/services/QuickSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/services/RadixSort.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/services/SelectionSort.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/controllers/Array.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/Enums/AlgorithmsType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/Enums/AlgorithmsType.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/interfaces/Algorithms.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/interfaces/Algorithms.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +40,7 @@
   &quot;keyToString&quot;: {
     &quot;Application.Main.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;last_opened_file_path&quot;: &quot;C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/resources&quot;,
@@ -54,6 +50,7 @@
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/java/com/B3/struct/analyzer/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -85,8 +82,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.20224.300" />
-        <option value="bundled-js-predefined-d6986cc7102b-410509235cf1-JavaScript-IU-242.20224.300" />
+        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
       </set>
     </attachedChunks>
   </component>
@@ -99,7 +96,9 @@
       <option name="presentableId" value="Default" />
       <updated>1726014897706</updated>
       <workItem from="1726014898742" duration="3793000" />
-      <workItem from="1726440468008" duration="2100000" />
+      <workItem from="1726440468008" duration="2214000" />
+      <workItem from="1726442711887" duration="593000" />
+      <workItem from="1726443393482" duration="1337000" />
     </task>
     <servers />
   </component>
