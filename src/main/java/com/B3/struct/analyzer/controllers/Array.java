@@ -21,16 +21,14 @@ public class Array<T> {
     };
 
     @SuppressWarnings("unchecked")
-    public T[] sorting(AlgorithmsType type, T[] array) {
+    public void sorting(AlgorithmsType type, T[] array) {
         Algorithms<T> algorithm = (Algorithms<T>) mapAlgorithms.get(type);
         algorithm.sort(array);
-        return array;
     }
 
     @SuppressWarnings("unchecked")
-    public T[] sorting(T[] array) {
+    public void sorting(T[] array) {
         Algorithms<T> algorithm = (Algorithms<T>) mapAlgorithms.get(AlgorithmsType.MERGE_SORT);
         algorithm.sort(array);
-        return array;
     }
 }
