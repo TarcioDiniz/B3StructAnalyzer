@@ -9,7 +9,7 @@ public class QuickSort<T> implements Algorithms<T> {
 
     @Override
     public String getName() {
-        return "Quick Sort";
+        return "QuickSort";
     }
 
     @Override

@@ -10,7 +10,7 @@ public class RadixSort implements Algorithms<Integer> {
 
     @Override
     public String getName() {
-        return "Radix Sort";
+        return "RadixSort";
     }
 
     @Override

@@ -9,7 +9,7 @@ public class BubbleSort<T> implements Algorithms<T> {
 
     @Override
     public String getName() {
-        return "Bubble Sort";
+        return "BubbleSort";
     }
 
     @Override

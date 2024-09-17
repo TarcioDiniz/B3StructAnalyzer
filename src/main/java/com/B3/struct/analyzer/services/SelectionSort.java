@@ -9,7 +9,7 @@ public class SelectionSort<T> implements Algorithms<T> {
 
     @Override
     public String getName() {
-        return "Selection Sort";
+        return "SelectionSort";
     }
 
     @Override

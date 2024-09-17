@@ -9,7 +9,7 @@ public class MergeSort<T> implements Algorithms<T> {
 
     @Override
     public String getName() {
-        return "Merge Sort";
+        return "MergeSort";
     }
 
     @Override
