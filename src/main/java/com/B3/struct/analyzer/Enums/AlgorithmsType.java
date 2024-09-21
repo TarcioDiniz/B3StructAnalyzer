@@ -6,6 +6,7 @@ public enum AlgorithmsType {
     BUBBLE_SORT,
     MERGE_SORT,
     QUICK_SORT,
+    QUICK_SORT_MEDIAN_OF_THREE,
     HEAP_SORT,
     RADIX_SORT
 }

@@ -4,7 +4,7 @@ import java.util.function.BiFunction;
 
 public class ComparatorProvider {
 
-    public static <T> BiFunction<T, T, Integer> getDefaultComparator(T[] array) {
+    public static <T> BiFunction<T, T, Integer>  getDefaultComparator(T[] array) {
         if (array != null && array.length > 0) {
             if (array[0] instanceof Integer) {
                 return (a, b) -> ((Integer) a).compareTo((Integer) b);

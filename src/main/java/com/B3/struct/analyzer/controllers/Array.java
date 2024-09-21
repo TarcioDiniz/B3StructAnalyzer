@@ -15,6 +15,7 @@ public class Array<T> {
             put(AlgorithmsType.BUBBLE_SORT, new BubbleSort<>());
             put(AlgorithmsType.MERGE_SORT, new MergeSort<>());
             put(AlgorithmsType.QUICK_SORT, new QuickSort<>());
+            put(AlgorithmsType.QUICK_SORT_MEDIAN_OF_THREE, new QuickSortMedianOfThree<>());
             put(AlgorithmsType.HEAP_SORT, new HeapSort<>());
             put(AlgorithmsType.RADIX_SORT, new RadixSort());
         }
