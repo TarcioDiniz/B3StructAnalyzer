@@ -11,7 +11,7 @@ import java.util.List;
 
 public class CSVHandler {
 
-    public void createCSV(String folderPath, String fileName, List<String[]> data) throws IOException {
+    public static void createCSV(String folderPath, String fileName, List<String[]> data) throws IOException {
         Path directoryPath = Paths.get(folderPath);
         Path filePath = directoryPath.resolve(fileName);
 
@@ -27,7 +27,7 @@ public class CSVHandler {
         }
     }
 
-    public List<String[]> readCSV(String filePath) throws IOException {
+    public static List<String[]> readCSV(String filePath) throws IOException {
         List<String[]> data = new ArrayList<>();
         Path path = Paths.get(filePath);
 
