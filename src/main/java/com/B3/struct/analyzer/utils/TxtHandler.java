@@ -6,12 +6,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
-import java.util.List;
 
 public class TxtHandler {
 
-    public void createTxt(String folderPath, String fileName, List<String> data) throws IOException {
+    public void createTxt(String folderPath, String fileName, String[][] data) throws IOException {
         Path directoryPath = Paths.get(folderPath);
         Path filePath = directoryPath.resolve(fileName);
 
@@ -20,21 +18,31 @@ public class TxtHandler {
         }
 
         try (BufferedWriter writer = Files.newBufferedWriter(filePath)) {
-            for (String line : data) {
-                writer.write(line);
+            for (String[] lineArr : data) {
+                for (String line : lineArr) {
+                    writer.write(line);
+                }
                 writer.newLine();
             }
         }
     }
 
-    public List<String> readTxt(String filePath) throws IOException {
-        List<String> data = new ArrayList<>();
+    public String[] readTxt(String filePath) throws IOException {
         Path path = Paths.get(filePath);
 
+        int lineCount = 0;
+        try (BufferedReader reader = Files.newBufferedReader(path)) {
+            while (reader.readLine() != null) {
+                lineCount++;
+            }
+        }
+
+        String[] data = new String[lineCount];
+        int index = 0;
         try (BufferedReader reader = Files.newBufferedReader(path)) {
             String line;
             while ((line = reader.readLine()) != null) {
-                data.add(line);
+                data[index++] = line;
             }
         }
         return data;

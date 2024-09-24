@@ -4,8 +4,6 @@ import com.B3.struct.analyzer.Enums.AlgorithmsType;
 import com.B3.struct.analyzer.utils.CSVHandler;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.function.BiFunction;
 
 public class CSVController {
@@ -15,14 +13,12 @@ public class CSVController {
         // Comparador para ordenar pelo ticker (índice 1)
         BiFunction<String[], String[], Integer> tickerComparator = (a, b) -> a[1].compareTo(b[1]);
 
-        // Ordena os dados pelo ticker
         sorter.sorting(algorithmsType, stockData, tickerComparator);
 
-        // Cria a lista de dados transformados com o cabeçalho
-        ArrayList<String[]> transformedData = new ArrayList<>(Arrays.asList(stockData));
-        transformedData.add(0, new String[]{"datetime", "ticker", "open", "close", "high", "low", "volume"});
+        String[][] transformedData = new String[stockData.length + 1][];
+        transformedData[0] = new String[]{"datetime", "ticker", "open", "close", "high", "low", "volume"};
+        System.arraycopy(stockData, 0, transformedData, 1, stockData.length);
 
-        // Cria o CSV
         CSVHandler.createCSV("src/main/resources/" + algorithmsType.toString() + "/ticker", fileName + ".csv", transformedData);
     }
 
@@ -34,14 +30,12 @@ public class CSVController {
             return Double.compare(volumeA, volumeB);
         };
 
-        // Ordena os dados pelo volume
         sorter.sorting(algorithmsType, stockData, volumeComparator);
 
-        // Cria a lista de dados transformados com o cabeçalho
-        ArrayList<String[]> transformedData = new ArrayList<>(Arrays.asList(stockData));
-        transformedData.add(0, new String[]{"datetime", "ticker", "open", "close", "high", "low", "volume"});
+        String[][] transformedData = new String[stockData.length + 1][];
+        transformedData[0] = new String[]{"datetime", "ticker", "open", "close", "high", "low", "volume"};
+        System.arraycopy(stockData, 0, transformedData, 1, stockData.length);
 
-        // Cria o CSV
         CSVHandler.createCSV("src/main/resources/" + algorithmsType.toString() + "/volume", fileName + ".csv", transformedData);
     }
 
@@ -53,12 +47,11 @@ public class CSVController {
             return Double.compare(variationB, variationA); // Ordem decrescente
         };
 
-        // Ordena os dados pela variação
         sorter.sorting(algorithmsType, stockData, variationComparator);
 
-        // Cria a lista de dados transformados com o cabeçalho
-        ArrayList<String[]> transformedData = new ArrayList<>(Arrays.asList(stockData));
-        transformedData.add(0, new String[]{"datetime", "ticker", "open", "close", "high", "low", "volume"});
+        String[][] transformedData = new String[stockData.length + 1][];
+        transformedData[0] = new String[]{"datetime", "ticker", "open", "close", "high", "low", "volume"};
+        System.arraycopy(stockData, 0, transformedData, 1, stockData.length);
 
         // Cria o CSV
         CSVHandler.createCSV("src/main/resources/" + algorithmsType.toString() + "/fluctuations", fileName + ".csv", transformedData);

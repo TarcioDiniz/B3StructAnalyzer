@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538cf846-668a-44f0-8158-3067cf4fc5b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/controllers/CSVController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/StockDataTransformer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/controllers/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/controllers/Array.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/controllers/CSVController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/controllers/CSVController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/CSVHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/CSVHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/StockDataTransformer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/StockDataTransformer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/TxtHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/TxtHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,10 +29,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -42,24 +42,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/java/com/B3/struct/analyzer/Main.java",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/java/com/B3/struct/analyzer/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tarci\Documents\Estrutura de dados\B3StructAnalyzer\src\main\resources" />
@@ -110,6 +110,9 @@
       <workItem from="1726844152195" duration="2248000" />
       <workItem from="1726873846237" duration="9534000" />
       <workItem from="1726925953523" duration="21456000" />
+      <workItem from="1727093292649" duration="7445000" />
+      <workItem from="1727114250278" duration="94000" />
+      <workItem from="1727216568311" duration="2074000" />
     </task>
     <servers />
   </component>

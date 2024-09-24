@@ -3,6 +3,7 @@ package com.B3.struct.analyzer;
 import com.B3.struct.analyzer.Enums.AlgorithmsType;
 import com.B3.struct.analyzer.controllers.Array;
 import com.B3.struct.analyzer.controllers.CSVController;
+import com.B3.struct.analyzer.services.MergeSort;
 import com.B3.struct.analyzer.utils.StockDataTransformer;
 import com.B3.struct.analyzer.utils.SystemInfoCollector;
 import com.B3.struct.analyzer.utils.TxtHandler;
@@ -11,9 +12,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.function.BiConsumer;
 
@@ -24,12 +23,12 @@ public class Main {
         Map<String, BiConsumer<String, AlgorithmsType>> functions = new HashMap<>();
 
         AlgorithmsType[] algorithmsTypes = new AlgorithmsType[]{
-                AlgorithmsType.INSERTION_SORT,
-                AlgorithmsType.SELECTION_SORT,
-                AlgorithmsType.QUICK_SORT,
-                AlgorithmsType.QUICK_SORT_MEDIAN_OF_THREE,
-                AlgorithmsType.MERGE_SORT,
-                AlgorithmsType.HEAP_SORT,
+//                AlgorithmsType.INSERTION_SORT,
+//                AlgorithmsType.SELECTION_SORT,
+//                AlgorithmsType.QUICK_SORT,
+//                AlgorithmsType.QUICK_SORT_MEDIAN_OF_THREE,
+//                AlgorithmsType.MERGE_SORT,
+//                AlgorithmsType.HEAP_SORT,
                 AlgorithmsType.RADIX_SORT,
         };
 
@@ -41,7 +40,7 @@ public class Main {
         StockDataTransformer.filterAndCreateCSV(transformedData, "b3stocks_F1");
 
 
-        functions.put("b3stocks_ticker", (fileName, algorithmsType) ->
+        /*functions.put("b3stocks_ticker", (fileName, algorithmsType) ->
                 {
                     try {
                         CSVController.createCSVTicker(
@@ -51,7 +50,7 @@ public class Main {
                         throw new RuntimeException(e);
                     }
                 }
-        );
+        );*/
 
         functions.put("b3stocks_volume", (fileName, algorithmsType) ->
                 {
@@ -65,7 +64,7 @@ public class Main {
                 }
         );
 
-        functions.put("b3stocks_fluctuations", (fileName, algorithmsType) ->
+/*        functions.put("b3stocks_fluctuations", (fileName, algorithmsType) ->
                 {
                     try {
                         CSVController.createCSVFluctuations(
@@ -75,7 +74,7 @@ public class Main {
                         throw new RuntimeException(e);
                     }
                 }
-        );
+        );*/
 
         executeAlgorithm(algorithmsTypes, functions);
     }
@@ -103,8 +102,8 @@ public class Main {
 
                 System.out.println("Executando: " + functionName + " - " + algorithmsType.toString());
 
-                List<Long> executionTimes = new ArrayList<>();
-                Map<Long, String> referenceExecution = new HashMap<>();
+                long[] executionTimes = new long[3];
+                String[] referenceExecution = new String[3];
 
                 Path folderPath = Paths.get("src/main/resources", algorithmsType.name());
                 try {
@@ -118,84 +117,63 @@ public class Main {
 
                 String fileName = functionName + "_" + array.getName(algorithmsType) + "_analyzer.txt";
 
-                // Adicionar lista para armazenar o uso de memória
-                List<Long> memoryUsages = new ArrayList<>();
+                long[] memoryUsages = new long[3]; // For storing memory usage
                 for (int i = 0; i < 3; i++) {
                     long startTime = System.nanoTime();
 
-                    // Captura o uso de memória antes da execução
                     long memoryBefore = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
                     try {
-                        // Simular a execução do algoritmo aqui (substitua pelo seu código real)
-                        // Exemplo: executeAlgorithm(algorithmsType);
-                        String classification = "";
-                        if (i == 0) {
-                            classification = "melhorCaso";
-                        } else if (i == 1) {
-                            classification = "medioCaso";
-                        } else {
-                            classification = "piorCaso";
-                        }
+                        String classification = (i == 0) ? "melhorCaso" : (i == 1) ? "medioCaso" : "piorCaso";
 
-                        // Passar a classificação junto com o tipo de algoritmo
                         function.accept(array.getName(algorithmsType) + "_" + classification, algorithmsType);
 
                         long endTime = System.nanoTime();
                         long executionTime = (endTime - startTime) / 1_000_000; // Converter para ms
 
-                        // Captura o uso de memória após a execução
                         long memoryAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
 
-                        // Adiciona a execução e o uso de memória
-                        executionTimes.add(executionTime);
-                        referenceExecution.put(
-                                executionTime,
-                                String.format("Execução %d, %s, %d", (i + 1),
-                                        algorithmsType.name(),
-                                        executionTime)
-                        );
+                        executionTimes[i] = executionTime;
+                        referenceExecution[i] = String.format("Execução %d, %s, %d", (i + 1), algorithmsType.name(), executionTime);
 
-                        // Adiciona o uso de memória
-                        memoryUsages.add(memoryAfter - memoryBefore);
+                        memoryUsages[i] = memoryAfter - memoryBefore;
                     } catch (Exception e) {
                         long endTime = System.nanoTime();
                         long executionTime = (endTime - startTime) / 1_000_000; // Converter para ms
 
-                        // Capture o uso de memória no momento da exceção
                         long memoryAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-                        memoryUsages.add(memoryAfter - memoryBefore); // Adiciona o uso de memória na exceção
+                        memoryUsages[i] = memoryAfter - memoryBefore;
 
-                        // Registra a exceção e o tempo de execução
                         System.err.printf("Erro na execução %d: %s (Tempo: %d ms)%n", (i + 1), e.getMessage(), executionTime);
                     }
                 }
 
-
-                executionTimes.sort(Long::compareTo);
+                // Sorting execution times
+                MergeSort<Long> mergeSort = new MergeSort<>();
+                Long[] executionTimesObj = convertLongArrayToLongObjectArray(executionTimes);
+                mergeSort.sort(executionTimesObj);
 
                 // Calcular a média do uso de memória
                 long totalMemoryUsage = 0;
                 for (long memoryUsageValue : memoryUsages) {
                     totalMemoryUsage += memoryUsageValue;
                 }
-                long averageMemoryUsage = Math.abs(totalMemoryUsage / memoryUsages.size());
+                long averageMemoryUsage = totalMemoryUsage / memoryUsages.length;
 
-                List<String> dataToWrite = new ArrayList<>();
-                dataToWrite.add("MODEL: " + modelInfo);
-                dataToWrite.add("CPU: " + cpuInfo);
-                dataToWrite.add("GPU: " + gpuInfo);
-                dataToWrite.add("RAM: " + ramInfo);
-                dataToWrite.add("");
-                dataToWrite.add("Uso de Memória: " + memoryUsage);
-                dataToWrite.add("Uso Médio de Memória durante execução: " + averageMemoryUsage + " bytes");
-                dataToWrite.add("");
-                dataToWrite.add("Classificação, Execução, Algoritmo, Tempo (ms)");
-
-                // Adicionando as classificações
-                dataToWrite.add("Melhor, " + referenceExecution.get(executionTimes.get(0)));
-                dataToWrite.add("Médio, " + referenceExecution.get(executionTimes.get(1)));
-                dataToWrite.add("Pior, " + referenceExecution.get(executionTimes.get(2)));
+                String[][] dataToWrite = {
+                        {"MODEL: " + modelInfo},
+                        {"CPU: " + cpuInfo},
+                        {"GPU: " + gpuInfo},
+                        {"RAM: " + ramInfo},
+                        {""},  // Linha em branco
+                        {"Uso de Memória: " + memoryUsage},
+                        {"Uso Médio de Memória durante execução: " + averageMemoryUsage + " bytes"},
+                        {""},  // Outra linha em branco
+                        {"Classificação, Execução, Algoritmo, Tempo (ms)"},
+                        {"Melhor, " + referenceExecution[0]},
+                        {"Médio, " + referenceExecution[1]},
+                        {"Pior, " + referenceExecution[2]}
+                };
 
                 // Escrevendo em um arquivo de texto
                 try {
@@ -207,6 +185,15 @@ public class Main {
         }
 
         System.out.println("\nExecução concluída.");
-
     }
+
+    private static Long[] convertLongArrayToLongObjectArray(long[] array) {
+        Long[] result = new Long[array.length];
+        for (int i = 0; i < array.length; i++) {
+            result[i] = array[i]; // Autoboxing
+        }
+        return result;
+    }
+
+
 }
