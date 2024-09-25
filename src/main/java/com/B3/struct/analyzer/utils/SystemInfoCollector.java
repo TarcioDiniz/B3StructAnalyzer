@@ -42,5 +42,9 @@ public class SystemInfoCollector {
         return (Math.abs(used) / (1024 * 1024)) + " MB / " + (total / (1024 * 1024)) + " MB";
     }
 
+    public String getOperatingSystem() {
+        return systemInfo.getOperatingSystem().toString();
+    }
+
 
 }

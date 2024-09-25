@@ -30,6 +30,12 @@ public class Array<T> {
     }
 
     @SuppressWarnings("unchecked")
+    public void sorting(AlgorithmsType type, long[][] array) {
+        Algorithms<long[]> algorithm = (Algorithms<long[]>) mapAlgorithms.get(type);
+        algorithm.sort(array);
+    }
+
+    @SuppressWarnings("unchecked")
     public void sorting(T[] array) {
         Algorithms<T> algorithm = (Algorithms<T>) mapAlgorithms.get(AlgorithmsType.MERGE_SORT);
         algorithm.sort(array);

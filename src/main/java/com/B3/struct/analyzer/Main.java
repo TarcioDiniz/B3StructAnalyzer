@@ -4,6 +4,7 @@ import com.B3.struct.analyzer.Enums.AlgorithmsType;
 import com.B3.struct.analyzer.controllers.Array;
 import com.B3.struct.analyzer.controllers.CSVController;
 import com.B3.struct.analyzer.services.MergeSort;
+import com.B3.struct.analyzer.utils.Convert;
 import com.B3.struct.analyzer.utils.StockDataTransformer;
 import com.B3.struct.analyzer.utils.SystemInfoCollector;
 import com.B3.struct.analyzer.utils.TxtHandler;
@@ -27,36 +28,46 @@ public class Main {
 //                AlgorithmsType.SELECTION_SORT,
 //                AlgorithmsType.QUICK_SORT,
 //                AlgorithmsType.QUICK_SORT_MEDIAN_OF_THREE,
-//                AlgorithmsType.MERGE_SORT,
-//                AlgorithmsType.HEAP_SORT,
-                AlgorithmsType.RADIX_SORT,
+                AlgorithmsType.MERGE_SORT,
+                AlgorithmsType.HEAP_SORT,
+//                AlgorithmsType.RADIX_SORT,
         };
 
+        // Supondo que transformedData seja um array de duas dimensões String[][]
         String[][] transformedData = StockDataTransformer.transformDateFormat(
                 "src/main/resources/b3_stocks_1994_2020.csv",
                 "src/main/resources"
         );
 
+        if (transformedData.length > 1) {
+            String[][] dataWithoutHeader = new String[transformedData.length - 1][];
+            System.arraycopy(transformedData, 1, dataWithoutHeader, 0, transformedData.length - 1);
+            transformedData = dataWithoutHeader;
+        }
+
+
         StockDataTransformer.filterAndCreateCSV(transformedData, "b3stocks_F1");
 
+        String[][] finalTransformedData = transformedData;
 
-        /*functions.put("b3stocks_ticker", (fileName, algorithmsType) ->
+
+        functions.put("b3stocks_ticker", (fileName, algorithmsType) ->
                 {
                     try {
                         CSVController.createCSVTicker(
-                                transformedData,
+                                finalTransformedData,
                                 "b3stocks_ticker_" + fileName, algorithmsType);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 }
-        );*/
+        );
 
         functions.put("b3stocks_volume", (fileName, algorithmsType) ->
                 {
                     try {
                         CSVController.createCSVVolume(
-                                transformedData,
+                                finalTransformedData,
                                 "b3stocks_volume_" + fileName, algorithmsType);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
@@ -64,17 +75,17 @@ public class Main {
                 }
         );
 
-/*        functions.put("b3stocks_fluctuations", (fileName, algorithmsType) ->
+        functions.put("b3stocks_fluctuations", (fileName, algorithmsType) ->
                 {
                     try {
                         CSVController.createCSVFluctuations(
-                                transformedData,
+                                finalTransformedData,
                                 "b3stocks_fluctuations_" + fileName, algorithmsType);
                     } catch (IOException e) {
                         throw new RuntimeException(e);
                     }
                 }
-        );*/
+        );
 
         executeAlgorithm(algorithmsTypes, functions);
     }
@@ -87,6 +98,7 @@ public class Main {
         String cpuInfo = systemInfoCollector.getCpuInfo();
         String gpuInfo = systemInfoCollector.getGpuInfo();
         String ramInfo = systemInfoCollector.getRamInfo();
+        String operatingSystem = systemInfoCollector.getOperatingSystem();
         String memoryUsage = systemInfoCollector.getMemoryUsage();
 
         System.out.println("Iniciando o processamento dos dados...");
@@ -150,7 +162,7 @@ public class Main {
 
                 // Sorting execution times
                 MergeSort<Long> mergeSort = new MergeSort<>();
-                Long[] executionTimesObj = convertLongArrayToLongObjectArray(executionTimes);
+                Long[] executionTimesObj = Convert.convertLongArrayToLongObjectArray(executionTimes);
                 mergeSort.sort(executionTimesObj);
 
                 // Calcular a média do uso de memória
@@ -165,6 +177,7 @@ public class Main {
                         {"CPU: " + cpuInfo},
                         {"GPU: " + gpuInfo},
                         {"RAM: " + ramInfo},
+                        {"OPERATING_SYSTEM: " + operatingSystem},
                         {""},  // Linha em branco
                         {"Uso de Memória: " + memoryUsage},
                         {"Uso Médio de Memória durante execução: " + averageMemoryUsage + " bytes"},
@@ -185,14 +198,6 @@ public class Main {
         }
 
         System.out.println("\nExecução concluída.");
-    }
-
-    private static Long[] convertLongArrayToLongObjectArray(long[] array) {
-        Long[] result = new Long[array.length];
-        for (int i = 0; i < array.length; i++) {
-            result[i] = array[i]; // Autoboxing
-        }
-        return result;
     }
 
 
