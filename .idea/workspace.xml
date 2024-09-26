@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538cf846-668a-44f0-8158-3067cf4fc5b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/Convert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/controllers/Array.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/controllers/Array.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/SystemInfoCollector.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/struct/analyzer/utils/SystemInfoCollector.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,24 +38,24 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/java/com/B3/struct/analyzer/Main.java",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/java/com/B3/struct/analyzer/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\tarci\Documents\Estrutura de dados\B3StructAnalyzer\src\main\resources" />
@@ -112,6 +109,9 @@
       <workItem from="1727093292649" duration="7445000" />
       <workItem from="1727114250278" duration="94000" />
       <workItem from="1727216568311" duration="9384000" />
+      <workItem from="1727229805246" duration="32000" />
+      <workItem from="1727357961199" duration="1610000" />
+      <workItem from="1727385618730" duration="304000" />
     </task>
     <servers />
   </component>

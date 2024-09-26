@@ -8,5 +8,5 @@ public enum AlgorithmsType {
     QUICK_SORT,
     QUICK_SORT_MEDIAN_OF_THREE,
     HEAP_SORT,
-    RADIX_SORT
+    COUNTING_SORT
 }

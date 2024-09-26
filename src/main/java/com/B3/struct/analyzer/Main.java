@@ -24,13 +24,13 @@ public class Main {
         Map<String, BiConsumer<String, AlgorithmsType>> functions = new HashMap<>();
 
         AlgorithmsType[] algorithmsTypes = new AlgorithmsType[]{
-//                AlgorithmsType.INSERTION_SORT,
-//                AlgorithmsType.SELECTION_SORT,
-//                AlgorithmsType.QUICK_SORT,
-//                AlgorithmsType.QUICK_SORT_MEDIAN_OF_THREE,
+                AlgorithmsType.INSERTION_SORT,
+                AlgorithmsType.SELECTION_SORT,
+                AlgorithmsType.QUICK_SORT,
+                AlgorithmsType.QUICK_SORT_MEDIAN_OF_THREE,
                 AlgorithmsType.MERGE_SORT,
                 AlgorithmsType.HEAP_SORT,
-//                AlgorithmsType.RADIX_SORT,
+                AlgorithmsType.COUNTING_SORT,
         };
 
         // Supondo que transformedData seja um array de duas dimensões String[][]
@@ -112,87 +112,91 @@ public class Main {
 
             for (AlgorithmsType algorithmsType : algorithmsTypes) {
 
-                System.out.println("Executando: " + functionName + " - " + algorithmsType.toString());
+                if (algorithmsType == AlgorithmsType.COUNTING_SORT) {
+                    System.out.println("Não é possível ordenar através do Counting Sort!");
+                } else {
+                    System.out.println("Executando: " + functionName + " - " + algorithmsType.toString());
 
-                long[] executionTimes = new long[3];
-                String[] referenceExecution = new String[3];
+                    long[] executionTimes = new long[3];
+                    String[] referenceExecution = new String[3];
 
-                Path folderPath = Paths.get("src/main/resources", algorithmsType.name());
-                try {
-                    Files.createDirectories(folderPath);
-                } catch (IOException e) {
-                    e.printStackTrace();
-                    continue;
-                }
-
-                Array<Integer> array = new Array<>();
-
-                String fileName = functionName + "_" + array.getName(algorithmsType) + "_analyzer.txt";
-
-                long[] memoryUsages = new long[3]; // For storing memory usage
-                for (int i = 0; i < 3; i++) {
-                    long startTime = System.nanoTime();
-
-                    long memoryBefore = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-
+                    Path folderPath = Paths.get("src/main/resources", algorithmsType.name());
                     try {
-                        String classification = (i == 0) ? "melhorCaso" : (i == 1) ? "medioCaso" : "piorCaso";
-
-                        function.accept(array.getName(algorithmsType) + "_" + classification, algorithmsType);
-
-                        long endTime = System.nanoTime();
-                        long executionTime = (endTime - startTime) / 1_000_000; // Converter para ms
-
-                        long memoryAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-
-                        executionTimes[i] = executionTime;
-                        referenceExecution[i] = String.format("Execução %d, %s, %d", (i + 1), algorithmsType.name(), executionTime);
-
-                        memoryUsages[i] = memoryAfter - memoryBefore;
-                    } catch (Exception e) {
-                        long endTime = System.nanoTime();
-                        long executionTime = (endTime - startTime) / 1_000_000; // Converter para ms
-
-                        long memoryAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
-                        memoryUsages[i] = memoryAfter - memoryBefore;
-
-                        System.err.printf("Erro na execução %d: %s (Tempo: %d ms)%n", (i + 1), e.getMessage(), executionTime);
+                        Files.createDirectories(folderPath);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                        continue;
                     }
-                }
 
-                // Sorting execution times
-                MergeSort<Long> mergeSort = new MergeSort<>();
-                Long[] executionTimesObj = Convert.convertLongArrayToLongObjectArray(executionTimes);
-                mergeSort.sort(executionTimesObj);
+                    Array<Integer> array = new Array<>();
 
-                // Calcular a média do uso de memória
-                long totalMemoryUsage = 0;
-                for (long memoryUsageValue : memoryUsages) {
-                    totalMemoryUsage += memoryUsageValue;
-                }
-                long averageMemoryUsage = totalMemoryUsage / memoryUsages.length;
+                    String fileName = functionName + "_" + array.getName(algorithmsType) + "_analyzer.txt";
 
-                String[][] dataToWrite = {
-                        {"MODEL: " + modelInfo},
-                        {"CPU: " + cpuInfo},
-                        {"GPU: " + gpuInfo},
-                        {"RAM: " + ramInfo},
-                        {"OPERATING_SYSTEM: " + operatingSystem},
-                        {""},  // Linha em branco
-                        {"Uso de Memória: " + memoryUsage},
-                        {"Uso Médio de Memória durante execução: " + averageMemoryUsage + " bytes"},
-                        {""},  // Outra linha em branco
-                        {"Classificação, Execução, Algoritmo, Tempo (ms)"},
-                        {"Melhor, " + referenceExecution[0]},
-                        {"Médio, " + referenceExecution[1]},
-                        {"Pior, " + referenceExecution[2]}
-                };
+                    long[] memoryUsages = new long[3]; // For storing memory usage
+                    for (int i = 0; i < 3; i++) {
+                        long startTime = System.nanoTime();
 
-                // Escrevendo em um arquivo de texto
-                try {
-                    txtHandler.createTxt(folderPath.toString(), fileName, dataToWrite);
-                } catch (IOException e) {
-                    e.printStackTrace();
+                        long memoryBefore = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+
+                        try {
+                            String classification = (i == 0) ? "melhorCaso" : (i == 1) ? "medioCaso" : "piorCaso";
+
+                            function.accept(array.getName(algorithmsType) + "_" + classification, algorithmsType);
+
+                            long endTime = System.nanoTime();
+                            long executionTime = (endTime - startTime) / 1_000_000; // Converter para ms
+
+                            long memoryAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+
+                            executionTimes[i] = executionTime;
+                            referenceExecution[i] = String.format("Execução %d, %s, %d", (i + 1), algorithmsType.name(), executionTime);
+
+                            memoryUsages[i] = memoryAfter - memoryBefore;
+                        } catch (Exception e) {
+                            long endTime = System.nanoTime();
+                            long executionTime = (endTime - startTime) / 1_000_000; // Converter para ms
+
+                            long memoryAfter = Runtime.getRuntime().totalMemory() - Runtime.getRuntime().freeMemory();
+                            memoryUsages[i] = memoryAfter - memoryBefore;
+
+                            System.err.printf("Erro na execução %d: %s (Tempo: %d ms)%n", (i + 1), e.getMessage(), executionTime);
+                        }
+                    }
+
+                    // Sorting execution times
+                    MergeSort<Long> mergeSort = new MergeSort<>();
+                    Long[] executionTimesObj = Convert.convertLongArrayToLongObjectArray(executionTimes);
+                    mergeSort.sort(executionTimesObj);
+
+                    // Calcular a média do uso de memória
+                    long totalMemoryUsage = 0;
+                    for (long memoryUsageValue : memoryUsages) {
+                        totalMemoryUsage += memoryUsageValue;
+                    }
+                    long averageMemoryUsage = totalMemoryUsage / memoryUsages.length;
+
+                    String[][] dataToWrite = {
+                            {"MODEL: " + modelInfo},
+                            {"CPU: " + cpuInfo},
+                            {"GPU: " + gpuInfo},
+                            {"RAM: " + ramInfo},
+                            {"OPERATING_SYSTEM: " + operatingSystem},
+                            {""},  // Linha em branco
+                            {"Uso de Memória: " + memoryUsage},
+                            {"Uso Médio de Memória durante execução: " + averageMemoryUsage + " bytes"},
+                            {""},  // Outra linha em branco
+                            {"Classificação, Execução, Algoritmo, Tempo (ms)"},
+                            {"Melhor, " + referenceExecution[0]},
+                            {"Médio, " + referenceExecution[1]},
+                            {"Pior, " + referenceExecution[2]}
+                    };
+
+                    // Escrevendo em um arquivo de texto
+                    try {
+                        txtHandler.createTxt(folderPath.toString(), fileName, dataToWrite);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                 }
             }
         }

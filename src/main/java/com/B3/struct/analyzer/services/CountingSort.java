@@ -6,11 +6,11 @@ import com.B3.struct.analyzer.utils.ComparatorProvider;
 import java.util.Arrays;
 import java.util.function.BiFunction;
 
-public class RadixSort implements Algorithms<Integer> {
+public class CountingSort implements Algorithms<Integer> {
 
     @Override
     public String getName() {
-        return "RadixSort";
+        return "CountingSort";
     }
 
     @Override

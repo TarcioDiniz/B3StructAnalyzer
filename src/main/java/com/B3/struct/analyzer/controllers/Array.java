@@ -20,7 +20,7 @@ public class Array<T> {
         mapAlgorithms.put(AlgorithmsType.QUICK_SORT, new QuickSort<>());
         mapAlgorithms.put(AlgorithmsType.QUICK_SORT_MEDIAN_OF_THREE, new QuickSortMedianOfThree<>());
         mapAlgorithms.put(AlgorithmsType.HEAP_SORT, new HeapSort<>());
-        mapAlgorithms.put(AlgorithmsType.RADIX_SORT, new RadixSort());
+        mapAlgorithms.put(AlgorithmsType.COUNTING_SORT, new CountingSort());
     }
 
     @SuppressWarnings("unchecked")
