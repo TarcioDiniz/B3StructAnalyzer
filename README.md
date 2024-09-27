@@ -76,4 +76,4 @@ O projeto utiliza a biblioteca **oshi-core** para monitoramento de desempenho e 
 
 ## Relatório Completo
 
-Para mais detalhes sobre a implementação, algoritmos de ordenação utilizados, e análise de desempenho, consulte o relatório completo neste [link](https://github.com/TarcioDiniz/B3StructAnalyzer/blob/master/src/main/resources/Bolsa%20de%20Valores1.0.pdf) ou no arquivo `src/main/resources/Bolsa de Valores1.0.pdf`.
+Para mais detalhes sobre a implementação, algoritmos de ordenação utilizados, e análise de desempenho, consulte o relatório completo neste [link](https://github.com/TarcioDiniz/B3StructAnalyzer/blob/master/src/main/resources/Bolsa%20de%20Valores3.0.pdf) ou no arquivo `src/main/resources/Bolsa de Valores1.0.pdf`.
