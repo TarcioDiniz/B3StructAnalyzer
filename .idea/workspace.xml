@@ -5,7 +5,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538cf846-668a-44f0-8158-3067cf4fc5b9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/application_layer/Controllers/ArrayController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/application_layer/Controllers/ArrayListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/application_layer/Controllers/LinkedListController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/application_layer/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/Array/BubbleSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/Array/CountingSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/Array/HeapSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/Array/MergeSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/Array/QuickSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/Array/QuickSortMedianOfThreeArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/Array/SelectionSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/ArrayList/BubbleSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/ArrayList/CountingSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/ArrayList/HeapSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/ArrayList/MergeSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/ArrayList/QuickSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/ArrayList/QuickSortMedianOfThreeArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/ArrayList/SelectionSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/LinkedList/BubbleSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/LinkedList/CountingSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/LinkedList/HeapSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/LinkedList/MergeSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/LinkedList/QuickSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/LinkedList/QuickSortMedianOfThreeLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/LinkedList/SelectionSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/ResultRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Repositories/WriteArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Services/ArrayListService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Services/ArrayService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Services/LinkedListService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/Domain/Dtos/Result.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/Domain/Enums/AlgorithmsEnum.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/Domain/Repositories/IResultRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/Domain/Repositories/IWriteArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Entities/IArray.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Repositories/IBaseSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Repositories/IBubbleSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Repositories/ICountingSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Repositories/IHeapSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Repositories/IMergeSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Repositories/IQuickSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Repositories/IQuickSortMedianOfThreeArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Repositories/ISelectionSortArrayRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArray/Services/IArrayService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArrayList/Repositories/IBaseSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArrayList/Repositories/IBubbleSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArrayList/Repositories/ICountingSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArrayList/Repositories/IHeapSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArrayList/Repositories/IMergeSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArrayList/Repositories/IQuickSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArrayList/Repositories/IQuickSortMedianOfThreeArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArrayList/Repositories/ISelectionSortArrayListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainArrayList/Services/IArrayListService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainLinkedList/Repositories/IBaseSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainLinkedList/Repositories/IBubbleSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainLinkedList/Repositories/ICountingSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainLinkedList/Repositories/IHeapSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainLinkedList/Repositories/IMergeSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainLinkedList/Repositories/IQuickSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainLinkedList/Repositories/IQuickSortMedianOfThreeLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainLinkedList/Repositories/ISelectionSortLinkedListRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/DomainLinkedList/Services/ILinkedListService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +78,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
+        <option value="JavaFXApplication" />
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -37,30 +101,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/java/com/B3/struct/analyzer/Main.java&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Application.com.B3.application_layer.Main.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/java/com/B3/domain_layer/DomainLinkedList",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "onboarding.tips.debug.path": "C:/Users/tarci/Documents/Estrutura de dados/B3StructAnalyzer/src/main/java/com/B3/struct/analyzer/Main.java",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\tarci\Documents\Estrutura de dados\B3StructAnalyzer\src\main\java\com\B3\domain_layer\DomainLinkedList" />
+      <recent name="C:\Users\tarci\Documents\Estrutura de dados\B3StructAnalyzer\src\main\java\com\B3\domain_layer\DomainArray" />
+      <recent name="C:\Users\tarci\Documents\Estrutura de dados\B3StructAnalyzer\src\main\java\com\B3\domain_layer\DomainArrayList" />
       <recent name="C:\Users\tarci\Documents\Estrutura de dados\B3StructAnalyzer\src\main\resources" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.com.B3.application_layer.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.B3.struct.analyzer.Main" />
       <module name="B3StructAnalyzer" />
@@ -74,8 +142,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.B3.application_layer.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.B3.application_layer.Main" />
+      <module name="B3StructAnalyzer" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.B3.application_layer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.B3.application_layer.Main" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -83,8 +165,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-b114ca120d71-intellij.indexing.shared.core-IU-242.21829.142" />
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-IU-242.21829.142" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23726.103" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23726.103" />
       </set>
     </attachedChunks>
   </component>
@@ -112,6 +194,17 @@
       <workItem from="1727357961199" duration="1610000" />
       <workItem from="1727385618730" duration="1631000" />
       <workItem from="1727443432161" duration="1224000" />
+      <workItem from="1727473336155" duration="641000" />
+      <workItem from="1727909944453" duration="3000" />
+      <workItem from="1729111127592" duration="653000" />
+      <workItem from="1729624215485" duration="61000" />
+      <workItem from="1729710827485" duration="41000" />
+      <workItem from="1731359255239" duration="62000" />
+      <workItem from="1731364772282" duration="720000" />
+      <workItem from="1731788602017" duration="9359000" />
+      <workItem from="1731812428338" duration="3185000" />
+      <workItem from="1731815682132" duration="347000" />
+      <workItem from="1731933148701" duration="14568000" />
     </task>
     <servers />
   </component>
