@@ -110,13 +110,13 @@ public class Main {
         );
 
         AlgorithmsEnum[] AlgorithmsEnums = new AlgorithmsEnum[]{
-                AlgorithmsEnum.BUBBLE_SORT,
-                AlgorithmsEnum.SELECTION_SORT,
-                AlgorithmsEnum.QUICK_SORT,
-                AlgorithmsEnum.QUICK_SORT_MEDIAN_OF_THREE,
-                AlgorithmsEnum.MERGE_SORT,
-                AlgorithmsEnum.HEAP_SORT,
-                AlgorithmsEnum.COUNTING_SORT,
+//                AlgorithmsEnum.BUBBLE_SORT,
+//                AlgorithmsEnum.SELECTION_SORT,
+//                AlgorithmsEnum.QUICK_SORT,
+//                AlgorithmsEnum.QUICK_SORT_MEDIAN_OF_THREE,
+//                AlgorithmsEnum.MERGE_SORT,
+//                AlgorithmsEnum.HEAP_SORT,
+//                AlgorithmsEnum.COUNTING_SORT,
 
                 AlgorithmsEnum.HASH_SORT,
                 AlgorithmsEnum.QUEUE_SORT,
