@@ -7,6 +7,7 @@ import com.B3.domain_layer.Domain.Dtos.Result;
 import com.B3.domain_layer.Domain.Repositories.IFileRepository;
 import com.B3.domain_layer.Domain.Repositories.IResultRepository;
 import com.B3.domain_layer.Domain.Services.IDateFormatter;
+import com.B3.domain_layer.Domain.Services.IStockFilterService;
 
 public class Main {
 
@@ -40,6 +41,29 @@ public class Main {
             System.out.println(fileResult.message);
         }
 
+
+        Result filterInitial = resultRepository.result(
+                "Aplicando filtro para aquele que possuir o maior volume negociado em bolsa.",
+                true,
+                null);
+
+        System.out.println(filterInitial.message);
+
+        IStockFilterService stockFilterService = ServiceRegistry.getInstance().getService(IStockFilterService.class);
+
+        Result filteredData = stockFilterService.filterByMaxVolume(data);
+
+        System.out.println(filteredData.message);
+
+        if (filteredData.status && filteredData.data != null) {
+            Result fileResult = fileRepository.writeFile("src/main/resources/b3stocks_F1.csv", (String[]) filteredData.data);
+
+            System.out.println(fileResult.message);
+        }
+
+        Result messageFinal = resultRepository.result("Aplicação finalizada.", true, null);
+
+        System.out.println(messageFinal.message);
 
     }
 }

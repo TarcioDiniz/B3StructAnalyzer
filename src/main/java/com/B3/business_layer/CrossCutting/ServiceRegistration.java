@@ -1,16 +1,18 @@
 package com.B3.business_layer.CrossCutting;
 
 import com.B3.business_layer.Business.Repositories.Array.*;
+import com.B3.business_layer.Business.Repositories.FileRepository;
 import com.B3.business_layer.Business.Repositories.Hash.HashRepository;
 import com.B3.business_layer.Business.Repositories.Queue.QueueRepository;
 import com.B3.business_layer.Business.Repositories.ResultRepository;
 import com.B3.business_layer.Business.Repositories.Tree.TreeRepository;
-import com.B3.business_layer.Business.Repositories.FileRepository;
 import com.B3.business_layer.Business.Services.DateFormatterService;
 import com.B3.business_layer.Business.Services.SortService;
-import com.B3.domain_layer.Domain.Repositories.IResultRepository;
+import com.B3.business_layer.Business.Services.StockFilterService;
 import com.B3.domain_layer.Domain.Repositories.IFileRepository;
+import com.B3.domain_layer.Domain.Repositories.IResultRepository;
 import com.B3.domain_layer.Domain.Services.IDateFormatter;
+import com.B3.domain_layer.Domain.Services.IStockFilterService;
 import com.B3.domain_layer.DomainArray.Repositories.*;
 import com.B3.domain_layer.DomainArray.Services.IArrayService;
 import com.B3.domain_layer.DomainHash.Repositories.IHashRepository;
@@ -54,6 +56,8 @@ public class ServiceRegistration<T> {
                 registry.getService(ITreeRepository.class)
 
         ));
+
+        registry.addSingleton(IStockFilterService.class, new StockFilterService());
 
     }
 
