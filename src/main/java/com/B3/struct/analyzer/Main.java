@@ -92,7 +92,8 @@ public class Main {
 
 
     private static void executeAlgorithm(
-            AlgorithmsType[] algorithmsTypes, Map<String, BiConsumer<String, AlgorithmsType>> functions) {
+            AlgorithmsType[] algorithmsTypes,
+            Map<String, BiConsumer<String, AlgorithmsType>> functions) {
         SystemInfoCollector systemInfoCollector = new SystemInfoCollector();
         String modelInfo = systemInfoCollector.getModel();
         String cpuInfo = systemInfoCollector.getCpuInfo();
