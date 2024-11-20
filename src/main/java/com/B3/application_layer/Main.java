@@ -123,10 +123,41 @@ public class Main {
                 AlgorithmsEnum.TREE_SORT
         };
 
+        Result sortingInitial = resultRepository.result(
+                "Aplicando os algoritmos de ordenação aos dados.",
+                true,
+                null);
+
+        System.out.println(sortingInitial.message);
 
         sortB3Ticker(data, AlgorithmsEnums, sortController, fileRepository);
-//        sortB3Volume(data, AlgorithmsEnums, sortController, fileRepository);
-//        sortB3Fluctuations(data, AlgorithmsEnums, sortController, fileRepository);
+
+        Result sortingTicker = resultRepository.result(
+                "Algoritmos de ordenação aos dados por tickers finalizados.",
+                true,
+                null);
+
+        System.out.println(sortingTicker.message);
+
+        sortB3Volume(data, AlgorithmsEnums, sortController, fileRepository);
+
+        Result sortingVolume = resultRepository.result(
+                "Algoritmos de ordenação aos dados por volume finalizados.",
+                true,
+                null);
+
+        System.out.println(sortingVolume.message);
+
+        sortB3Fluctuations(data, AlgorithmsEnums, sortController, fileRepository);
+
+        Result sortingFluctuations = resultRepository.result(
+                "Algoritmos de ordenação aos dados por fluctuation (high - low) finalizados.",
+                true,
+                null);
+
+        System.out.println(
+                sortingFluctuations.message + "\n"
+        );
 
         Result messageFinal = resultRepository.result("Aplicação finalizada.", true, null);
 
