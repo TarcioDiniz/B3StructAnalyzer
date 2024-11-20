@@ -61,6 +61,23 @@ public class Main {
             System.out.println(fileResult.message);
         }
 
+        Result filterMediaDiaria = resultRepository.result(
+                "Aplicando filtro para apenas os registros que possuírem volume negociado acima da média diária.",
+                true,
+                null);
+
+        System.out.println(filterMediaDiaria.message);
+
+        Result filteredData2 = stockFilterService.filterByAboveAverageVolume(data);
+
+        System.out.println(filteredData2.message);
+
+        if (filteredData2.status && filteredData2.data != null) {
+            Result fileResult = fileRepository.writeFile("src/main/resources/b3stocks_F2.csv", (String[]) filteredData2.data);
+
+            System.out.println(fileResult.message);
+        }
+
         Result messageFinal = resultRepository.result("Aplicação finalizada.", true, null);
 
         System.out.println(messageFinal.message);

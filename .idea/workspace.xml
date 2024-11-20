@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="538cf846-668a-44f0-8158-3067cf4fc5b9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/application_layer/Controllers/StockFilterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Services/StockFilterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/Domain/Services/IStockFilterService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/application_layer/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/application_layer/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/CrossCutting/ServiceRegistration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/CrossCutting/ServiceRegistration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Services/StockFilterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/business_layer/Business/Services/StockFilterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/Domain/Services/IStockFilterService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/B3/domain_layer/Domain/Services/IStockFilterService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/b3stocks_F1.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/b3stocks_T1.csv" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -156,7 +156,7 @@
       <workItem from="1732027505529" duration="10929000" />
       <workItem from="1732062842285" duration="5034000" />
       <workItem from="1732067971192" duration="2672000" />
-      <workItem from="1732101777443" duration="7853000" />
+      <workItem from="1732101777443" duration="10864000" />
     </task>
     <servers />
   </component>

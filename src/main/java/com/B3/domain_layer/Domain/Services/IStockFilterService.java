@@ -4,4 +4,6 @@ import com.B3.domain_layer.Domain.Dtos.Result;
 
 public interface IStockFilterService {
     Result filterByMaxVolume(String[] data);
+
+    Result filterByAboveAverageVolume(String[] data);
 }
