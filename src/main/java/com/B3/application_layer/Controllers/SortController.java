@@ -4,6 +4,8 @@ import com.B3.domain_layer.Domain.Dtos.Result;
 import com.B3.domain_layer.Domain.Enums.AlgorithmsEnum;
 import com.B3.domain_layer.DomainArray.Services.IArrayService;
 
+import java.util.Comparator;
+
 public class SortController<T> {
 
     private final IArrayService<T> arrayService;
@@ -13,7 +15,7 @@ public class SortController<T> {
     }
 
 
-    public Result sorting(AlgorithmsEnum algorithm, T array) {
-        return arrayService.sort(algorithm, array);
+    public Result sorting(AlgorithmsEnum algorithm, T array, Comparator<Object> comparator) {
+        return arrayService.sort(algorithm, array, comparator);
     }
 }

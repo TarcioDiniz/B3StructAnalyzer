@@ -10,7 +10,7 @@ public class QueueRepository<T> implements IQueueRepository<T> {
     private final HelpComparator helpComparator = new HelpComparator();
 
     @Override
-    public T sort(T array) {
+    public T sort(T array, Comparator<Object> comparator) {
         if (array == null) {
             throw new IllegalArgumentException("O array não pode ser nulo");
         }
@@ -26,7 +26,7 @@ public class QueueRepository<T> implements IQueueRepository<T> {
         }
 
         // Utilizando o HelpComparator para obter o comparador do primeiro elemento
-        Comparator<Object> comparator = helpComparator.getComparator(arr[0]);
+
 
         // Implementação do Bubble Sort
         for (int i = 0; i < arr.length - 1; i++) {

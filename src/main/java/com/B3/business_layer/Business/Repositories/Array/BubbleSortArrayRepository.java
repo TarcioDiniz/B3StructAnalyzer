@@ -10,7 +10,7 @@ public class BubbleSortArrayRepository<T> implements IBubbleSortArrayRepository<
     private final HelpComparator helpComparator = new HelpComparator();
 
     @Override
-    public T sort(T array) {
+    public T sort(T array, Comparator<Object> comparator) {
         if (array == null) {
             throw new IllegalArgumentException("O array não pode ser nulo");
         }
@@ -21,8 +21,6 @@ public class BubbleSortArrayRepository<T> implements IBubbleSortArrayRepository<
 
         if (array instanceof Object[]) {
             Object[] arr = (Object[]) array;
-
-            Comparator<Object> comparator = helpComparator.getComparator(arr[0]);
 
             boolean swapped;
             int n = arr.length;

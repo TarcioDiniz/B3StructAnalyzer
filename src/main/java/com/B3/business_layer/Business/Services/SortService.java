@@ -11,6 +11,7 @@ import com.B3.domain_layer.DomainQueue.Repositories.IQueueRepository;
 import com.B3.domain_layer.DomainHash.Repositories.IHashRepository;
 import com.B3.domain_layer.DomainTree.Repositories.ITreeRepository;
 
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -50,10 +51,9 @@ public class SortService<T> implements IArrayService<T> {
     }
 
     @Override
-    public Result sort(AlgorithmsEnum algorithm, T array) {
+    public Result sort(AlgorithmsEnum algorithm, T array, Comparator<Object> comparator) {
         try {
-            T result = algorithmRepositoryMap.get(algorithm).sort(array);
-            this.writeArrayRepository.writeFile("array.txt", result);
+            T result = algorithmRepositoryMap.get(algorithm).sort(array, comparator);
             String message = algorithm.toString() + " completed";
             return resultRepository.result(message, true, result);
         } catch (Exception e) {

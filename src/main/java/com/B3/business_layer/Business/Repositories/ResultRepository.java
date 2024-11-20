@@ -12,7 +12,7 @@ public class ResultRepository implements IResultRepository {
         String className = getCallerClassName();
 
         // Formata a data
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         String formattedDate = sdf.format(new Date());
 
         // Sequências de escape ANSI para cores
@@ -22,7 +22,7 @@ public class ResultRepository implements IResultRepository {
         String blue = "\u001B[34m"; // Cor azul
 
         // Monta a mensagem
-        String fullMessage = blue + "[" + className + "] " + (status ? green : red) + message + " " + reset + formattedDate;
+        String fullMessage = formattedDate + " " + blue + "[" + className + "] " + (status ? green : red) + message + reset;
 
         // Retorna o resultado com a mensagem colorida
         return new Result(fullMessage, status, data);

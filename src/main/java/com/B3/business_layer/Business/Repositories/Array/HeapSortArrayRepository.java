@@ -10,7 +10,7 @@ public class HeapSortArrayRepository<T> implements IHeapSortArrayRepository<T> {
     private final HelpComparator helpComparator = new HelpComparator();
 
     @Override
-    public T sort(T array) {
+    public T sort(T array, Comparator<Object> comparator) {
         if (array == null) {
             throw new IllegalArgumentException("O array não pode ser nulo");
         }
@@ -18,8 +18,6 @@ public class HeapSortArrayRepository<T> implements IHeapSortArrayRepository<T> {
         if (array instanceof Object[]) {
             Object[] arr = (Object[]) array;
             int n = arr.length;
-
-            Comparator<Object> comparator = helpComparator.getComparator(arr[0]);
 
             for (int i = n / 2 - 1; i >= 0; i--) {
                 heapify(arr, n, i, comparator);

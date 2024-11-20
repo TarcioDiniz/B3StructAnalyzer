@@ -12,7 +12,7 @@ public class HashRepository<T> implements IHashRepository<T> {
     private final HelpComparator helpComparator = new HelpComparator();
 
     @Override
-    public T sort(T array) {
+    public T sort(T array, Comparator<Object> comparator) {
         if (array == null) {
             throw new IllegalArgumentException("O array não pode ser nulo");
         }
@@ -24,7 +24,6 @@ public class HashRepository<T> implements IHashRepository<T> {
         if (array instanceof Object[]) {
             Object[] arr = (Object[]) array;
 
-            Comparator<Object> comparator = helpComparator.getComparator(arr[0]);
 
             Map<Integer, Object[]> hashTable = new HashMap<>();
 

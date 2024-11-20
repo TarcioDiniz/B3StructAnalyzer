@@ -10,15 +10,13 @@ public class SelectionSortArrayRepository<T> implements ISelectionSortArrayRepos
     private final HelpComparator helpComparator = new HelpComparator();
 
     @Override
-    public T sort(T array) {
+    public T sort(T array, Comparator<Object> comparator) {
         if (array == null) {
             throw new IllegalArgumentException("O array não pode ser nulo");
         }
 
         if (array instanceof Object[]) {
             Object[] arr = (Object[]) array;
-
-            Comparator<Object> comparator = helpComparator.getComparator(arr[0]);
 
             selectionSort(arr, comparator);
             return (T) arr;
