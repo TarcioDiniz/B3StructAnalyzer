@@ -4,7 +4,7 @@ import com.B3.business_layer.Business.Repositories.ResultRepository;
 import com.B3.domain_layer.Domain.Dtos.Result;
 import com.B3.domain_layer.Domain.Enums.AlgorithmsEnum;
 import com.B3.domain_layer.Domain.Repositories.IBaseSortArrayRepository;
-import com.B3.domain_layer.Domain.Repositories.IWriteArrayRepository;
+import com.B3.domain_layer.Domain.Repositories.IFileRepository;
 import com.B3.domain_layer.DomainArray.Repositories.*;
 import com.B3.domain_layer.DomainArray.Services.IArrayService;
 import com.B3.domain_layer.DomainQueue.Repositories.IQueueRepository;
@@ -16,12 +16,12 @@ import java.util.Map;
 
 public class SortService<T> implements IArrayService<T> {
 
-    private final IWriteArrayRepository<T> writeArrayRepository;
+    private final IFileRepository<T> writeArrayRepository;
     private final ResultRepository resultRepository;
     private final Map<AlgorithmsEnum, IBaseSortArrayRepository<T>> algorithmRepositoryMap;
 
     public SortService(
-            IWriteArrayRepository<T> writeArrayRepository,
+            IFileRepository<T> writeArrayRepository,
             IBubbleSortArrayRepository<T> bubbleSortArrayRepository,
             ICountingSortArrayRepository<T> countingSortArrayRepository,
             IHeapSortArrayRepository<T> heapSortArrayRepository,

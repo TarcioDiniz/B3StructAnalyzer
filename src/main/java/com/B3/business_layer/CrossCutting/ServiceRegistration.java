@@ -5,10 +5,12 @@ import com.B3.business_layer.Business.Repositories.Hash.HashRepository;
 import com.B3.business_layer.Business.Repositories.Queue.QueueRepository;
 import com.B3.business_layer.Business.Repositories.ResultRepository;
 import com.B3.business_layer.Business.Repositories.Tree.TreeRepository;
-import com.B3.business_layer.Business.Repositories.WriteArrayRepository;
+import com.B3.business_layer.Business.Repositories.FileRepository;
+import com.B3.business_layer.Business.Services.DateFormatterService;
 import com.B3.business_layer.Business.Services.SortService;
 import com.B3.domain_layer.Domain.Repositories.IResultRepository;
-import com.B3.domain_layer.Domain.Repositories.IWriteArrayRepository;
+import com.B3.domain_layer.Domain.Repositories.IFileRepository;
+import com.B3.domain_layer.Domain.Services.IDateFormatter;
 import com.B3.domain_layer.DomainArray.Repositories.*;
 import com.B3.domain_layer.DomainArray.Services.IArrayService;
 import com.B3.domain_layer.DomainHash.Repositories.IHashRepository;
@@ -21,7 +23,7 @@ public class ServiceRegistration<T> {
     public void addServices() {
         ServiceRegistry registry = ServiceRegistry.getInstance();
 
-        registry.addSingleton(IWriteArrayRepository.class, new WriteArrayRepository<T>());
+        registry.addSingleton(IFileRepository.class, new FileRepository());
         registry.addSingleton(IResultRepository.class, new ResultRepository());
 
         registry.addSingleton(IBubbleSortArrayRepository.class, new BubbleSortArrayRepository<T>());
@@ -36,8 +38,10 @@ public class ServiceRegistration<T> {
         registry.addSingleton(IHashRepository.class, new HashRepository<T>());
         registry.addSingleton(ITreeRepository.class, new TreeRepository<T>());
 
+        registry.addSingleton(IDateFormatter.class, new DateFormatterService());
+
         registry.addSingleton(IArrayService.class, new SortService<T>(
-                registry.getService(IWriteArrayRepository.class),
+                registry.getService(IFileRepository.class),
                 registry.getService(IBubbleSortArrayRepository.class),
                 registry.getService(ICountingSortArrayRepository.class),
                 registry.getService(IHeapSortArrayRepository.class),

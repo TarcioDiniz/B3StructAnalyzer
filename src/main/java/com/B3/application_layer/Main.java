@@ -1,50 +1,45 @@
 package com.B3.application_layer;
 
-import com.B3.application_layer.Controllers.SortController;
+import com.B3.application_layer.Controllers.ArrayDateFormatterController;
 import com.B3.business_layer.CrossCutting.ServiceRegistration;
 import com.B3.business_layer.CrossCutting.ServiceRegistry;
 import com.B3.domain_layer.Domain.Dtos.Result;
-import com.B3.domain_layer.Domain.Enums.AlgorithmsEnum;
-import com.B3.domain_layer.DomainArray.Services.IArrayService;
-
-import java.util.Arrays;
+import com.B3.domain_layer.Domain.Repositories.IFileRepository;
+import com.B3.domain_layer.Domain.Repositories.IResultRepository;
+import com.B3.domain_layer.Domain.Services.IDateFormatter;
 
 public class Main {
 
     @SuppressWarnings("unchecked")
     public static void main(String[] args) {
 
-        new ServiceRegistration<Integer[]>().addServices();
+        new ServiceRegistration<String[]>().addServices();
 
-        SortController<Integer[]> sortController = new SortController<Integer[]>(
-                ServiceRegistry.getInstance().getService(IArrayService.class)
+        IResultRepository resultRepository = ServiceRegistry.getInstance().getService(IResultRepository.class);
+
+        Result messageInitial = resultRepository.result("Inicializando aplicação.", true, null);
+
+        System.out.println(messageInitial.message);
+
+        ArrayDateFormatterController arrayDateFormatterController = new ArrayDateFormatterController(
+                ServiceRegistry.getInstance().getService(IDateFormatter.class)
         );
 
-        AlgorithmsEnum[] AlgorithmsEnums = new AlgorithmsEnum[]{
-                AlgorithmsEnum.BUBBLE_SORT,
-                AlgorithmsEnum.SELECTION_SORT,
-                AlgorithmsEnum.QUICK_SORT,
-                AlgorithmsEnum.QUICK_SORT_MEDIAN_OF_THREE,
-                AlgorithmsEnum.MERGE_SORT,
-                AlgorithmsEnum.HEAP_SORT,
-                AlgorithmsEnum.COUNTING_SORT,
+        IFileRepository<String[]> fileRepository = ServiceRegistry.getInstance().getService(IFileRepository.class);
 
-                AlgorithmsEnum.HASH_SORT,
-                AlgorithmsEnum.QUEUE_SORT,
-                AlgorithmsEnum.TREE_SORT
-        };
+        String[] data = fileRepository.readFile("src/main/resources/b3_stocks_1994_2020.csv");
 
-        for (AlgorithmsEnum algorithm : AlgorithmsEnums) {
-            Result result = sortController.sorting(algorithm, new Integer[]{1, 9, 5, 1, 5, 6, 7, 8, 9, 10});
-            System.out.println(result.message);
-            if (result.data instanceof Integer[]) {
-                // Cast the data to Integer[] and print using Arrays.toString()
-                System.out.println(Arrays.toString((Integer[]) result.data));
-            } else {
-                // Handle other types if needed
-                System.out.println(result.data);
-            }
+        Result result = arrayDateFormatterController.formatArrayDate(data, "dd/MM/yyyy");
+
+        System.out.println(result.message);
+
+        if (result.status) {
+
+            Result fileResult = fileRepository.writeFile("src/main/resources/b3stocks_T1.csv", data);
+
+            System.out.println(fileResult.message);
         }
+
 
     }
 }
