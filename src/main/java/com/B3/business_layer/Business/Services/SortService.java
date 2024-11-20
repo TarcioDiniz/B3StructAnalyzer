@@ -3,20 +3,24 @@ package com.B3.business_layer.Business.Services;
 import com.B3.business_layer.Business.Repositories.ResultRepository;
 import com.B3.domain_layer.Domain.Dtos.Result;
 import com.B3.domain_layer.Domain.Enums.AlgorithmsEnum;
+import com.B3.domain_layer.Domain.Repositories.IBaseSortArrayRepository;
 import com.B3.domain_layer.Domain.Repositories.IWriteArrayRepository;
 import com.B3.domain_layer.DomainArray.Repositories.*;
 import com.B3.domain_layer.DomainArray.Services.IArrayService;
+import com.B3.domain_layer.DomainQueue.Repositories.IQueueRepository;
+import com.B3.domain_layer.DomainHash.Repositories.IHashRepository;
+import com.B3.domain_layer.DomainTree.Repositories.ITreeRepository;
 
 import java.util.HashMap;
 import java.util.Map;
 
-public class ArrayService<T> implements IArrayService<T> {
+public class SortService<T> implements IArrayService<T> {
 
     private final IWriteArrayRepository<T> writeArrayRepository;
     private final ResultRepository resultRepository;
     private final Map<AlgorithmsEnum, IBaseSortArrayRepository<T>> algorithmRepositoryMap;
 
-    public ArrayService(
+    public SortService(
             IWriteArrayRepository<T> writeArrayRepository,
             IBubbleSortArrayRepository<T> bubbleSortArrayRepository,
             ICountingSortArrayRepository<T> countingSortArrayRepository,
@@ -24,7 +28,10 @@ public class ArrayService<T> implements IArrayService<T> {
             IMergeSortArrayRepository<T> mergeSortArrayRepository,
             IQuickSortArrayRepository<T> quickSortArrayRepository,
             IQuickSortMedianOfThreeArrayRepository<T> quickSortMedianOfThreeArrayRepository,
-            ISelectionSortArrayRepository<T> selectionSortArrayRepository
+            ISelectionSortArrayRepository<T> selectionSortArrayRepository,
+            IQueueRepository<T> queueRepository,
+            IHashRepository<T> hashSortRepository,
+            ITreeRepository<T> treeSortRepository
     ) {
         this.writeArrayRepository = writeArrayRepository;
         resultRepository = new ResultRepository();
@@ -37,7 +44,9 @@ public class ArrayService<T> implements IArrayService<T> {
         this.algorithmRepositoryMap.put(AlgorithmsEnum.QUICK_SORT, quickSortArrayRepository);
         this.algorithmRepositoryMap.put(AlgorithmsEnum.QUICK_SORT_MEDIAN_OF_THREE, quickSortMedianOfThreeArrayRepository);
         this.algorithmRepositoryMap.put(AlgorithmsEnum.SELECTION_SORT, selectionSortArrayRepository);
-
+        this.algorithmRepositoryMap.put(AlgorithmsEnum.QUEUE_SORT, queueRepository);
+        this.algorithmRepositoryMap.put(AlgorithmsEnum.HASH_SORT, hashSortRepository);
+        this.algorithmRepositoryMap.put(AlgorithmsEnum.TREE_SORT, treeSortRepository);
     }
 
     @Override

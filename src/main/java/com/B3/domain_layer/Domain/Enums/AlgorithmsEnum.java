@@ -8,5 +8,9 @@ public enum AlgorithmsEnum {
     QUICK_SORT,
     QUICK_SORT_MEDIAN_OF_THREE,
     HEAP_SORT,
-    COUNTING_SORT
+    COUNTING_SORT,
+
+    TREE_SORT,
+    HASH_SORT,
+    QUEUE_SORT
 }

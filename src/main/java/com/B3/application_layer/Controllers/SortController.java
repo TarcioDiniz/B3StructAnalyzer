@@ -4,11 +4,11 @@ import com.B3.domain_layer.Domain.Dtos.Result;
 import com.B3.domain_layer.Domain.Enums.AlgorithmsEnum;
 import com.B3.domain_layer.DomainArray.Services.IArrayService;
 
-public class ArrayController<T> {
+public class SortController<T> {
 
     private final IArrayService<T> arrayService;
 
-    public ArrayController(IArrayService<T> arrayService) {
+    public SortController(IArrayService<T> arrayService) {
         this.arrayService = arrayService;
     }
 
