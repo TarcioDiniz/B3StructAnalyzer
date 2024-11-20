@@ -47,7 +47,7 @@ mvn clean install
 4. Execute o projeto:
 
 ```bash
-mvn exec:java -Dexec.mainClass="com.B3.struct.analyzer.Main"
+mvn exec:java -Dexec.mainClass="com.B3.application_layer.Main"
 ```
 
 ## Estrutura dos Dados
